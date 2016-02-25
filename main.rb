@@ -26,6 +26,10 @@ get '/profile' do
   current_user
   erb :profileview
 end
+get '/logout' do
+  session[:user_id] = nil
+  redirect '/'
+end
 
 post '/submitted' do
    @user_fname = params[:fname]
