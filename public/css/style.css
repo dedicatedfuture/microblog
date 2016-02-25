@@ -1,0 +1,87 @@
+.sidebar-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  background: tomato;
+  border-right: 3px red solid;
+  width: 100px;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+}
+
+.sidebar-menu > li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+
+.sidebar-menu > li a:hover {
+  background-color: darkred;
+  color: tomato;
+}
+
+h1 {
+  text-align: center;
+  width: 100%;
+  color: navy;
+  background: skyblue;
+  float: right;
+  margin-top: -25px;
+  padding-top: 25px;
+  margin-right: -8px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 0px;
+}
+
+.topbar {
+  text-align: center;
+  width: 100%;
+  color: navy;
+  background: skyblue;
+  border-bottom: 3px navy solid;
+  float: right;
+  margin-top: 0px;
+  padding-top: 15px;
+  margin-right: -8px;
+  padding-right: 15px;
+}
+
+.sign-in {
+  list-style-type: none;
+}
+
+.sign-in > li {
+  clear: right;
+  float: right;
+}
+
+.blogfeed {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  margin-left: -80px;
+  margin-bottom: -35px;
+}
+
+.blogfeed > li {
+  margin: 10px;
+  padding: 10px;
+}
+
+.blogfeed > li a {
+  text-decoration: none;
+  color: white;
+}
+
+.blogfeed > li a:hover {
+  background-color: white;
+  color: navy;
+}
+
+.sign-in > form {
+  float: right;
+}
