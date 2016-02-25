@@ -1,3 +1,16 @@
+<% if @current_user %>
+<div class="container">
+   <form action="update" method="post" id="signup">
+    <p>First Name: <input type="text" name="fname" value="<%= @current_user.fname %>"></p>
+    <p>Last Name: <input type="text" name="lname" value="<%= @current_user.lname %>"></p>
+    <p>Email: <input type="text" name="email" value="<%= @current_user.email %>"></p>
+    <p>Username: <input type="text" name="uname" value="<%= @current_user.username %>"></p>
+    <p>Password: <input type="password" name="password" value="<%= @current_user.password %>"></p>
+    <p>Description: <textarea rows="10" cols="50" name="description" form="signup"><%= @current_user.description %></textarea></p>
+    <p><input type="submit" value="Update"></p>
+  </form>
+</div>
+<% else %>
 <div class="container">
    <form action="submitted" method="post" id="signup">
     <p>First Name: <input type="text" name="fname"></p>
@@ -6,6 +19,7 @@
     <p>Username: <input type="text" name="uname"></p>
     <p>Password: <input type="password" name="password"></p>
     <p>Description: <textarea rows="10" cols="50" name="description" form="signup"></textarea></p>
-    <p><input type="submit" value="Submit">
-
+    <p><input type="submit" value="Submit"></p>
+  </form>
 </div>
+<% end %>
