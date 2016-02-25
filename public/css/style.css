@@ -29,9 +29,9 @@ h1 {
   color: navy;
   background: skyblue;
   float: right;
-  margin-top: -25px;
+  margin-top: -16px;
   padding-top: 25px;
-  margin-right: -8px;
+  /*margin-right: -8px*/;
   padding-right: 15px;
   padding-bottom: 15px;
   margin-bottom: 0px;
@@ -84,4 +84,11 @@ h1 {
 
 .sign-in > form {
   float: right;
+}
+/*erb file to show inside of layout view*/
+
+.container{
+  position: relative;
+  left: 200px;
+  top: 400px;
 }
