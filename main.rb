@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 
 #set the database
-# configure(:development){set :database, 'sqlite3:microblog.sqlite3'}
+configure(:development){set :database, 'sqlite3:microblog.sqlite3'
 
 require './models/users'
 require './models/posts'
