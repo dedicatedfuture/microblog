@@ -1,8 +1,15 @@
+<% if @current_user %>
 <div class="container">
   <h2>Profile Details</h2>
-  <p>Username: @username</p>
-  <p>First Name: @fname</p>
-  <p>Last Name: @lname</p>
-  <p>Email: @email</p>
-  <p>Description: @description</p>
+  <p>Username: <%= @current_user.username %></p>
+  <p>First Name: <%= @current_user.fname %></p>
+  <p>Last Name: <%= @current_user.lname %></p>
+  <p>Email: <%= @current_user.email %></p>
+  <p>Description: <%= @current_user.description %></p>
 </div>
+<% else %>
+<div class="conatiner">
+  <h1>You are not signed in</h1>
+  <p>Click <a href="/">Here</a></p>
+</div>
+<% end %>

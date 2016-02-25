@@ -29,6 +29,7 @@
         </form>
         <li><a href="/signup">Or Sign Up</a></li>
       </ul>
+       <%= flash[:notice] if flash[:notice] %>
     </nav>
     <%= yield %>
   </body>
