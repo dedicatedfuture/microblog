@@ -49,7 +49,7 @@ post '/submitted' do
    @user_description = params[:description]
    @user_date = params[:joined]
    @user_password = params[:password]
-   @user = User.create(fname: @user_fname, lname: @user_lname, email: @user_email, username: @user_name, description: @user_description, joined: @user_date, password: @user_password )
+   @user = User.create(fname: @user_fname, lname: @user_lname, email: @user_email, username: @user_name, description: @user_description, joined: @user_date, password: @user_password, joined: Time.now  )
    redirect '/account'
 end
 
@@ -111,7 +111,7 @@ post '/microsubmit' do
   @title = params[:title]
   @micro_blog = params[:microblog]
 
-  @post = Post.create(title: @title, body: @micro_blog, user_id: @user_id)
+  @post = Post.create(title: @title, body: @micro_blog, user_id: @user_id, created: Time.now )
   redirect '/'
 
 end
