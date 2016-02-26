@@ -106,10 +106,12 @@ end
 
 
 post '/microsubmit' do
-   @title = params[:title]
-   @micro_blog = params[:microblog]
+  current_user
+  @user_id = @current_user.id
+  @title = params[:title]
+  @micro_blog = params[:microblog]
 
-   @post = Post.create(title: @title, body: @micro_blog)
-   redirect '/profile'
+  @post = Post.create(title: @title, body: @micro_blog, user_id: @user_id)
+  redirect '/'
 
 end

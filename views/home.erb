@@ -4,6 +4,16 @@
   <!-- display users followING feed -->
 </div>
 
+<div class="container">
+   <form action="microsubmit" method="post" id="microsubmit">
+
+    <p>Title: <input type="text" name="title"></p>
+
+    <p>Blog: <textarea rows="10" cols="50" name="microblog" form="microsubmit"></textarea></p>
+    <p><input type="submit" value="Post"></p>
+  </form>
+</div>
+
 <% @posts.first(10).each do |p| %>
   <div class="posts">
     <h3><%= p.title %></h3>
