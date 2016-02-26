@@ -10,7 +10,9 @@ require './models/users'
 require './models/posts'
 
 get '/' do
+  post_all
   current_user
+
   erb :home
 end
 
@@ -21,6 +23,7 @@ end
 
 get '/profile' do
   current_user
+  # current_user_posts
   erb :profile
 end
 
@@ -84,9 +87,29 @@ def current_user
   end
 end
 
+def post_all
+  @posts = Post.all.reverse
+end
+
+
+
 get '/del' do
   current_user
   @current_user.destroy
   session[:user_id] = nil
   redirect '/'
+end
+
+get '/post' do
+  erb :posts
+end
+
+
+post '/microsubmit' do
+   @title = params[:title]
+   @micro_blog = params[:microblog]
+
+   @post = Post.create(title: @title, body: @micro_blog)
+   redirect '/profile'
+
 end

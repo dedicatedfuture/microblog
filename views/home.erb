@@ -3,9 +3,22 @@
   <h2>Welcome <%= @current_user.fname %>!</h2>
   <!-- display users followING feed -->
 </div>
+
+<% @posts.first(10).each do |p| %>
+  <div class="posts">
+    <h3><%= p.title %></h3>
+    <p><%= p.body %></p>
+  </div>
+<% end %>
 <% else %>
 <div class="container">
   <h1>Welcome to Philly</h1>
   <!-- display list of ten most recent blog feeds -->
 </div>
+  <% @posts.first(10).each do |p| %>
+    <div class="posts">
+      <h3><%= p.title %></h3>
+      <p><%= p.body %></p>
+    </div>
+  <% end %>
 <% end %>

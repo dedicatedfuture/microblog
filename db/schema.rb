@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225190751) do
+ActiveRecord::Schema.define(version: 20160226192626) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
     t.datetime "created", default: '2016-02-24 22:12:56'
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
