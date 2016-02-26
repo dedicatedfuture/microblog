@@ -22,8 +22,8 @@ get '/signup' do
 end
 
 get '/profile' do
+  user_posts
   current_user
-  # current_user_posts
   erb :profile
 end
 
@@ -47,9 +47,8 @@ post '/submitted' do
    @user_email = params[:email]
    @user_name = params[:uname]
    @user_description = params[:description]
-   @user_date = params[:joined]
    @user_password = params[:password]
-   @user = User.create(fname: @user_fname, lname: @user_lname, email: @user_email, username: @user_name, description: @user_description, joined: @user_date, password: @user_password, joined: Time.now  )
+   @user = User.create(fname: @user_fname, lname: @user_lname, email: @user_email, username: @user_name, description: @user_description, password: @user_password, joined: Time.now )
    redirect '/account'
 end
 
@@ -91,7 +90,11 @@ def post_all
   @posts = Post.all.reverse
 end
 
-
+def user_posts
+  current_user
+  user_id = @current_user.id
+  @user_posts = Post.where(user_id: user_id).reverse
+end
 
 get '/del' do
   current_user
