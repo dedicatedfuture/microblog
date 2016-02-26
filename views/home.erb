@@ -1,0 +1,11 @@
+<% if @current_user %>
+<div class="container">
+  <h2>Welcome <%= @current_user.fname %>!</h2>
+  <!-- display users followING feed -->
+</div>
+<% else %>
+<div class="home-not-signed-in">
+  <h1>Welcome to Philly</h1>
+  <!-- display list of ten most recent blog feeds -->
+</div>
+<% end %>
