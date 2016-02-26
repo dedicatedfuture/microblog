@@ -92,3 +92,10 @@
   background: none;
   color: navy;
 }
+
+.posts {
+  text-align: center;
+  background: none;
+  color: navy;
+  border: green 10px solid;
+}
