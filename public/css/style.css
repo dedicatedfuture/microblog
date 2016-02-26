@@ -89,21 +89,6 @@
 
 .container {
   text-align: center;
-  position: relative;
-}
-
-.container > h1 {
-  background: none;
-}
-
-.home-not-signed-in > h1 {
-  text-align: center;
-  background: none;
-  color: navy;
-}
-
-.about {
-  text-align: center;
   background: none;
   color: navy;
 }
