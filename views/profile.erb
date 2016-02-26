@@ -11,6 +11,13 @@
     </form>
   </div>
 </div>
+<% @user_posts.first(10).each do |p| %>
+  <div class="posts">
+    <h3><%= p.title %></h3>
+    <p><%= p.body %></p>
+    <p><%= p.user.username %></p>
+  </div>
+<% end %>
 <% else %>
 <div class="container">
   <h1>You are not signed in</h1>
