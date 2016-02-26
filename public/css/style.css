@@ -23,7 +23,7 @@
   color: tomato;
 }
 
-h1 {
+.home-header {
   text-align: center;
   width: 100%;
   color: navy;
@@ -87,8 +87,8 @@ h1 {
 }
 /*erb file to show inside of layout view*/
 
-.container{
-  position: relative;
-  left: 200px;
-  top: 400px;
+.container {
+  text-align: center;
+  background: none;
+  color: navy;
 }

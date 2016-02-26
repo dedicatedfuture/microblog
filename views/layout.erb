@@ -2,9 +2,8 @@
 <html>
   <head>
     <title>MicroBlog</title>
-     <link rel="stylesheet" href="css/normalize.css"type="text/css">
+    <link rel="stylesheet" href="css/normalize.css"type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-
   </head>
   <body>
     <nav class="sidebar">
@@ -15,7 +14,7 @@
         <li><a href="/about">About</a></li>
       </ul>
     </nav>
-    <h1>MicroBlog</h1>
+    <h1 class="home-header">MicroBlog</h1>
     <nav class="topbar">
       <ul class="sign-in">
         <ul class="blogfeed">
@@ -30,7 +29,7 @@
         <li><a href="/signup">Or Sign Up</a></li>
         <li><a href="/logout">Log Out</a></li>
       </ul>
-       <%= flash[:notice] if flash[:notice] %>
+      <%= flash[:notice] if flash[:notice] %>
     </nav>
     <%= yield %>
   </body>

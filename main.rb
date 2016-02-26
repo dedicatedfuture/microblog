@@ -10,6 +10,7 @@ require './models/users'
 require './models/posts'
 
 get '/' do
+  current_user
   erb :home
 end
 
@@ -18,13 +19,18 @@ get '/signup' do
   erb :signup
 end
 
+get '/profile' do
+  current_user
+  erb :profile
+end
+
 get '/about' do
   erb :about
 end
 
-get '/profile' do
+get '/account' do
   current_user
-  erb :profileview
+  erb :account
 end
 
 get '/logout' do
@@ -41,7 +47,7 @@ post '/submitted' do
    @user_date = params[:joined]
    @user_password = params[:password]
    @user = User.create(fname: @user_fname, lname: @user_lname, email: @user_email, username: @user_name, description: @user_description, joined: @user_date, password: @user_password )
-   redirect '/profile'
+   redirect '/account'
 end
 
 post '/update' do
@@ -53,7 +59,7 @@ post '/update' do
   @user_description = params[:description]
   @user_password = params[:password]
   @current_user.update(fname: @user_fname, lname: @user_lname, email: @user_email, username: @user_name, description: @user_description, password: @user_password )
-  redirect '/profile'
+  redirect '/account'
 end
 
 post '/sign-in' do
@@ -74,9 +80,10 @@ end
 
 def current_user
   if session[:user_id]
-   @current_user = User.find(session[:user_id])
+    @current_user = User.find(session[:user_id])
   end
 end
+
 get '/del' do
   current_user
   @current_user.destroy
