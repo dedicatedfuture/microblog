@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
         follower_ids = Follower.where(following: self.id).pluck(:followed)
 
         follower_ids.each do |id|
-          followersArray.push User.find id
+          followersArray.push(User.where(id))
         end
 
     return followersArray
