@@ -13,10 +13,12 @@
 </div>
 
 <% @posts.first(10).each do |p| %>
+
   <div class="posts">
     <h3><%= p.title %></h3>
     <p><%= p.body %></p>
     <p><%= p.user.username %></p>
+
       <form method="POST" action="/follow">
         <input type="hidden" name="following" value="<%= p.user.id %>">
         <input type="hidden" name="followed" value="<%= @current_user.id %>">
@@ -24,6 +26,9 @@
       </form>
   </div>
 <% end %>
+
+
+
 <% else %>
 <div class="container">
   <h1>Welcome to Philly</h1>
