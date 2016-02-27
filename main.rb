@@ -8,7 +8,6 @@ configure(:development){set :database, 'sqlite3:microblog.sqlite3'}
 set :sessions, true
 require './models/users'
 require './models/posts'
-require './models/followers'
 
 get '/' do
   post_all
@@ -116,11 +115,5 @@ post '/microsubmit' do
   @micro_blog = params[:microblog]
 
   @post = Post.create(title: @title, body: @micro_blog, user_id: @user_id, created: Time.now )
-  redirect '/'
-
-end
-
-post '/follow' do
-  Follower.create(followed: params[:followed], following: params[:following])
   redirect '/'
 end
