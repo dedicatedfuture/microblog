@@ -7,7 +7,7 @@
 <div class="container">
    <form action="microsubmit" method="post" id="microsubmit">
     <p>Title: <input type="text" name="title"></p>
-    <p>Blog: (150 character limit)<textarea rows="10" cols="50" name="microblog" form="microsubmit" maxlength="150"></textarea></p>
+    <p>Blog: (150 character limit)<textarea rows="3" cols="30" name="microblog" form="microsubmit" maxlength="150"></textarea></p>
     <p><input type="submit" value="Post"></p>
   </form>
 </div>
@@ -38,7 +38,7 @@
 
 
 <% else %>
-<div class="container">
+<div class="container" id="firstdiv">
   <h1>Welcome to Philly</h1>
   <!-- display list of ten most recent blog feeds -->
 </div>
