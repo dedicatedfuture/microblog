@@ -24,14 +24,15 @@
         <form method="POST" action="/sign-in">
           <input type="text" name="email" placeholder="Email">
           <input type="password" name="password" placeholder="Password">
-          <input type="submit">
+          <input type="submit" class="bizutton">
         </form>
-        <li><a href="/signup">Or Sign Up</a></li>
-        <li><a href="/logout">Log Out</a></li>
+        <li id="signup"><a href="/signup"><button type="button" class="bizutton">Sign Up</button></a></li>
+        <li id="logout"><a href="/logout"><button type="button" class="bizutton">Log Out</button></a></li>
       </ul>
       <%= flash[:notice] if flash[:notice] %>
     </nav>
     <%= yield %>
   </body>
   <script src="js/microblog.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </html>

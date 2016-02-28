@@ -1,5 +1,12 @@
 <% if @current_user %>
-  <div class="container">
+
+
+<% @user_posts.first(10).each do |p| %>
+  <div class="posts">
+    <h3><%= p.title %></h3>
+    <p><%= p.body %></p>
+    <p><%= p.user.username %></p>
+
     <h2><%= @current_user.username %></h2>
     <p>"<%= @current_user.description %>"</p>
     <!-- display a text box to 'post' blogs at top, with display of all blogs authored by user -->
@@ -10,6 +17,7 @@
         <p><input type="submit" value="Post"></p>
       </form>
     </div>
+
   </div>
   <% @user_posts.first(10).each do |p| %>
     <div class="posts">
