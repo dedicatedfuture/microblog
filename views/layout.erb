@@ -18,18 +18,19 @@
 
     <nav class="topbar">
        <h1 class="home-header">MicroBlog</h1>
-        <ul class="blogfeed">
-          <li><a href="/">Home</a></li>
-          <li><a href="/myblogs">My Blogs</a></li>
-        </ul>
+
         <ul class="sign-in">
-        <form method="POST" action="/sign-in">
-          <input type="text" name="email" placeholder="Email">
-          <input type="password" name="password" placeholder="Password">
-          <input type="submit" class="bizutton">
-        </form>
-        <li id="signup"><a href="/signup"><button type="button" class="bizutton">Sign Up</button></a></li>
-        <li id="logout"><a href="/logout"><button type="button" class="bizutton">Log Out</button></a></li>
+          <form method="POST" action="/sign-in">
+            <li id="logout"><a href="/logout"><button type="button" class="bizutton">Log Out</button></a></li>
+            <li id="signup"><a href="/signup"><button type="button" class="bizutton">Sign Up</button></a></li>
+            <li><input type="submit" class="bizutton"></li>
+             <li><input type="password" name="password" placeholder="Password"></li>
+           <li> <input type="text" name="email" placeholder="Email"></li>
+
+
+          </form>
+
+
       </ul>
       <%= flash[:notice] if flash[:notice] %>
     </nav>
