@@ -46,19 +46,20 @@
   background: skyblue;
   border-bottom: 3px navy solid;
   float: right;
-  margin-top: 0px;
+  margin-top: -20px;
   padding-top: 15px;
   margin-right: -8px;
   padding-right: 15px;
+  display: inline;
 
 }
 
 
 
-.sign-in > li {
-  clear: right;
-  float: right;
+.sign-in li {
   display: inline;
+
+  float: right;
 }
 
 .blogfeed {
@@ -158,5 +159,6 @@ button:hover{
 
 #maincontainer{
   position: relative;
-  top: 260px;
+  top: 100px;
+
 }
