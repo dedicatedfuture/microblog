@@ -117,10 +117,10 @@ post '/microsubmit' do
 
   @post = Post.create(title: @title, body: @micro_blog, user_id: @user_id, created: Time.now )
   redirect '/'
-
 end
 
 post '/follow' do
+
 
   Follower.create(followed: params[:followed], following: params[:following])
   flash[:notice] = "You are now following this user."
@@ -132,4 +132,5 @@ post '/unfollow' do
   Follower.where(followed: params[:followed],  following:  params[:following]).destroy_all
   flash[:notice] = "You are no longer following this user."
   redirect '/'
+
 end
