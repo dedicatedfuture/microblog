@@ -14,13 +14,15 @@
         <li><a href="/about">About</a></li>
       </ul>
     </nav>
-    <h1 class="home-header">MicroBlog</h1>
+
+
     <nav class="topbar">
-      <ul class="sign-in">
+       <h1 class="home-header">MicroBlog</h1>
         <ul class="blogfeed">
           <li><a href="/">Home</a></li>
           <li><a href="/myblogs">My Blogs</a></li>
         </ul>
+        <ul class="sign-in">
         <form method="POST" action="/sign-in">
           <input type="text" name="email" placeholder="Email">
           <input type="password" name="password" placeholder="Password">
@@ -31,7 +33,10 @@
       </ul>
       <%= flash[:notice] if flash[:notice] %>
     </nav>
+
+  <div id="maincontainer">
     <%= yield %>
+  </div>
   </body>
   <script src="js/microblog.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>

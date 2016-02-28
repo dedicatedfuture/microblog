@@ -1,3 +1,4 @@
+
 .sidebar-menu {
   list-style-type: none;
   margin: 0;
@@ -38,6 +39,7 @@
 }
 
 .topbar {
+
   text-align: center;
   width: 100%;
   color: navy;
@@ -48,17 +50,15 @@
   padding-top: 15px;
   margin-right: -8px;
   padding-right: 15px;
-}
-
-.sign-in {
-  list-style-type: none;
-
 
 }
+
+
 
 .sign-in > li {
   clear: right;
   float: right;
+  display: inline;
 }
 
 .blogfeed {
@@ -87,15 +87,15 @@
 .sign-in > form {
   float: right;
 }
-/*erb file to show inside of layout view*/
+  /*erb file to show inside of layout view*/
 
 .container {
   text-align: center;
   background: none;
   color: navy;
-  width: 70%;
+  width: 50%;
   position: relative;
-  left: 100px;
+  left: 200px;
 
 }
 
@@ -155,7 +155,8 @@ button:hover{
   text-decoration: none;
 }
 
-#firstdiv {
+
+#maincontainer{
   position: relative;
-  top: 500px;
+  top: 260px;
 }
