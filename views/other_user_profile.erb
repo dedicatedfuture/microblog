@@ -10,7 +10,7 @@
       <p><%= p.created %></p>
     </div>
   <% end %>
-  <!-- <% if Follower.where(followed: @current_user.id, following: p.user_id).empty? %>
+  <% if Follower.where(followed: @current_user.id, following: p.user_id).empty? %>
     <form method="POST" action="/follow">
       <input type="hidden" name="following" value="<%= p.user.id %>">
       <input type="hidden" name="followed" value="<%= @current_user.id %>">
@@ -22,7 +22,7 @@
       <input type="hidden" name="followed" value="<%= @current_user.id %>">
       <button type="submit" class="button">Unfollow</button>
     </form>
-  <% end %> -->
+  <% end %>
 <% else %>
 <div class="container">
   <h1>You are not signed in</h1>
