@@ -1,23 +1,23 @@
 <% if @current_user %>
-<div class="container">
-  <h2><%= @current_user.username %></h2>
-  <p>"<%= @current_user.description %>"</p>
-  <!-- display a text box to 'post' blogs at top, with display of all blogs authored by user -->
   <div class="container">
-    <form action="microsubmit" method="post" id="microsubmit">
-      <p>Title: <input type="text" name="title"></p>
-      <p>Blog:(150 characters limit) <textarea rows="10" cols="50" name="microblog" form="microsubmit" maxlength="150"></textarea></p>
-      <p><input type="submit" value="Post"></p>
-    </form>
+    <h2><%= @current_user.username %></h2>
+    <p>"<%= @current_user.description %>"</p>
+    <!-- display a text box to 'post' blogs at top, with display of all blogs authored by user -->
+    <div class="container">
+      <form action="microsubmit" method="post" id="microsubmit">
+        <p>Title: <input type="text" name="title"></p>
+        <p>Blog: <textarea rows="10" cols="50" name="microblog" form="microsubmit"></textarea></p>
+        <p><input type="submit" value="Post"></p>
+      </form>
+    </div>
   </div>
-</div>
-<% @user_posts.first(10).each do |p| %>
-  <div class="posts">
-    <h3><%= p.title %></h3>
-    <p><%= p.body %></p>
-    <p><%= p.user.username %></p>
-  </div>
-<% end %>
+  <% @user_posts.first(10).each do |p| %>
+    <div class="posts">
+      <h3><%= p.title %></h3>
+      <p><%= p.body %></p>
+      <p><%= p.user.username %></p>
+    </div>
+  <% end %>
 <% else %>
 <div class="container">
   <h1>You are not signed in</h1>
