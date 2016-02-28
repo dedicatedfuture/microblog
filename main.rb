@@ -129,10 +129,7 @@ post '/unfollow' do
   redirect '/'
 end
 
-post '/unfollow' do
-  Follower.where(followed: params[:followed], following: params[:following]).destroy_all
-  redirect '/'
-end
+
 
 # current issue is here. on redirect after post, the /other_user_profile page does not save the params, therefore @other_user comes up nil
 get '/other_user_profile' do
@@ -141,8 +138,9 @@ get '/other_user_profile' do
 end
 
 post '/direct_to_other_user_profile' do
+  current_user
   @other_user = User.where(id: params[:other_user_id]).first
   other_user_id = @other_user.id
   @other_user_posts = Post.where(user_id: other_user_id).reverse
-  redirect '/other_user_profile'
+  erb :other_user_profile
 end
