@@ -13,7 +13,6 @@ require './models/followers'
 get '/' do
   post_all
   current_user
-
   erb :home
 end
 
@@ -23,7 +22,6 @@ get '/signup' do
 end
 
 get '/profile' do
-  user_posts
   current_user
   erb :profile
 end
@@ -84,6 +82,7 @@ end
 def current_user
   if session[:user_id]
     @current_user = User.find(session[:user_id])
+    user_posts(@current_user)
   end
 end
 
@@ -91,9 +90,8 @@ def post_all
   @posts = Post.all.reverse
 end
 
-def user_posts
-  current_user
-  user_id = @current_user.id
+def user_posts(x)
+  user_id = x.id
   @user_posts = Post.where(user_id: user_id).reverse
 end
 
@@ -120,17 +118,31 @@ post '/microsubmit' do
 end
 
 post '/follow' do
-
-
   Follower.create(followed: params[:followed], following: params[:following])
   flash[:notice] = "You are now following this user."
   redirect '/'
 end
 
 post '/unfollow' do
-
   Follower.where(followed: params[:followed],  following:  params[:following]).destroy_all
   flash[:notice] = "You are no longer following this user."
   redirect '/'
+end
 
+post '/unfollow' do
+  Follower.where(followed: params[:followed], following: params[:following]).destroy_all
+  redirect '/'
+end
+
+# current issue is here. on redirect after post, the /other_user_profile page does not save the params, therefore @other_user comes up nil
+get '/other_user_profile' do
+  current_user
+  erb :other_user_profile
+end
+
+post '/direct_to_other_user_profile' do
+  @other_user = User.where(id: params[:other_user_id]).first
+  other_user_id = @other_user.id
+  @other_user_posts = Post.where(user_id: other_user_id).reverse
+  redirect '/other_user_profile'
 end
