@@ -123,3 +123,8 @@ post '/follow' do
     Follower.create(followed: params[:followed], following: params[:following])
     redirect '/'
 end
+
+post '/unfollow' do
+  Follower.where(followed: params[:followed], following: params[:following]).destroy_all
+  redirect '/'
+end
