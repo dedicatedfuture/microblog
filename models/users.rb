@@ -5,9 +5,16 @@ class User < ActiveRecord::Base
     followersArray = []
     follower_ids = Follower.where(following: self.id).pluck(:followed)
 
-    follower_ids.each do |id|
-      followersArray.push User.find id
-    end
+
+        followersArray = []
+        follower_ids = Follower.where(following: self.id).pluck(:followed)
+
+        follower_ids.each do |id|
+          followersArray.push(User.where(id))
+        end
+
+
+
 
     return followersArray
 
