@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MicroBlog</title>
+    <title>PHL</title>
     <link rel="stylesheet" href="css/normalize.css"type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
   </head>
@@ -14,23 +14,16 @@
         <li><a href="/about">About</a></li>
       </ul>
     </nav>
-
-
     <nav class="topbar">
-       <h1 class="home-header">MicroBlog</h1>
-
-        <ul class="sign-in">
-          <form method="POST" action="/sign-in">
-            <li id="logout"><a href="/logout"><button type="button" class="bizutton">Log Out</button></a></li>
-            <li id="signup"><a href="/signup"><button type="button" class="bizutton">Sign Up</button></a></li>
-            <li><input type="submit" class="bizutton"></li>
-             <li><input type="password" name="password" placeholder="Password"></li>
-           <li> <input type="text" name="email" placeholder="Email"></li>
-
-
-          </form>
-
-
+      <h1 class="home-header">PHL</h1>
+      <ul class="sign-in">
+        <form method="POST" action="/sign-in">
+          <li id="logout"><a href="/logout"><button type="button" class="bizutton">Log Out</button></a></li>
+          <li id="signup"><a href="/signup"><button type="button" class="bizutton">Sign Up</button></a></li>
+          <li><input type="submit" class="bizutton"></li>
+          <li><input type="password" name="password" placeholder="Password"></li>
+          <li> <input type="text" name="email" placeholder="Email"></li>
+        </form>
       </ul>
       <%= flash[:notice] if flash[:notice] %>
     </nav>
