@@ -8,7 +8,7 @@
 <div class="container">
    <form action="microsubmit" method="post" id="microsubmit">
     <p>Title: <input type="text" name="title"></p>
-    <p>Blog:<textarea rows="3" cols="30" name="microblog" form="microsubmit" maxlength="150">(150 character limit)</textarea></p>
+    <p>Blog:<textarea rows="3" cols="30" name="microblog" form="microsubmit" maxlength="150" placeholder="(150 character limit)"></textarea></p>
     <p><input type="submit" value="Post"></p>
   </form>
 </div>
@@ -26,7 +26,7 @@
   <% end %>
 <% else %>
 <div class="container" id="firstdiv">
-  <h1>Welcome to Philly</h1>
+  <h1>Welcome to Microblog</h1>
   <!-- display list of ten most recent blog feeds -->
 </div>
   <% @posts.first(10).each do |p| %>
