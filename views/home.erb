@@ -22,20 +22,6 @@
         <input type="hidden" name="other_user_id" value="<%= p.user.id %>">
         <button type="submit" class="button"><%= p.user.username %></button>
       </form>
-      <!-- BILL, you may uncomment the below to see the follow/unfollow working, but ultimately i want it on the users' profile page -->
-      <% if Follower.where(followed: @current_user.id, following: p.user_id).empty? %>
-        <form method="POST" action="/follow">
-          <input type="hidden" name="following" value="<%= p.user.id %>">
-          <input type="hidden" name="followed" value="<%= @current_user.id %>">
-          <button type="submit" class="button">Follow</button>
-        </form>
-      <% else %>
-        <form method="POST" action="/unfollow">
-          <input type="hidden" name="following" value="<%= p.user.id %>">
-          <input type="hidden" name="followed" value="<%= @current_user.id %>">
-          <button type="submit" class="button">Unfollow</button>
-        </form>
-      <% end %>
     </div>
   <% end %>
 <% else %>
