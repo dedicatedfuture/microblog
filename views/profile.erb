@@ -1,16 +1,35 @@
 <% if @current_user %>
-
-
-
+  <div class="container">
+    <h2>Welcome <%= @current_user.fname %>!</h2>
+    <p><%= @current_user.description %></p>
+    <!-- display users followING feed -->
+  </div>
     <!-- display a text box to 'post' blogs at top, with display of all blogs authored by user -->
-    <div class="container">
-      <form action="microsubmit" method="post" id="microsubmit">
-        <p>Title: <input type="text" name="title"></p>
-        <p>Blog: <textarea rows="3" cols="30" name="microblog" form="microsubmit"></textarea></p>
-        <p><input type="submit" value="Post"></p>
-      </form>
-    </div>
+  <div class="container">
+    <form action="microsubmit" method="post" id="microsubmit">
+      <p>Title: <input type="text" name="title"></p>
+      <p>Blog: <textarea rows="3" cols="30" name="microblog" form="microsubmit"></textarea></p>
+      <p><input type="submit" value="Post"></p>
+    </form>
+  </div>
 
+  <div class="container">
+    <h2>Followers</h2>
+    <% @current_user.get_followers.each do |f| %>
+      <div class="followers">
+        <p><%= f %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="container">
+    <h2>Following</h2>
+    <% @current_user.get_following.each do |f| %>
+      <div class="followers">
+        <p><%= f %></p>
+      </div>
+    <% end %>
+  </div>
 
   <% @user_posts.first(10).each do |p| %>
     <div class="posts">
