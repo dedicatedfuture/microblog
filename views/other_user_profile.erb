@@ -1,7 +1,13 @@
 <% if @current_user %>
   <div class="container">
-    <h2><%= @other_user.username %></h2>
+    <h2>User: <%= @other_user.username %></h2>
     <p>"<%= @other_user.description %>"</p>
+    <h2>Profile Details</h2>
+
+  <p>First Name: <%= @other_user.fname %></p>
+  <p>Last Name: <%= @other_user.lname %></p>
+  <p>Email: <%= @other_user.email %></p>
+
     <% if Follower.where(followed: @current_user.id, following: @other_user.id).empty? %>
       <form method="POST" action="/follow">
         <input type="hidden" name="following" value="<%= @other_user.id %>">
