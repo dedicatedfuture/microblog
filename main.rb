@@ -98,6 +98,8 @@ end
 get '/del' do
   current_user
   @current_user.destroy
+  Follower.where(followed: @current_user.id).destroy_all
+  Follower.where(following: @current_user.id).destroy_all
   session[:user_id] = nil
   redirect '/'
 end

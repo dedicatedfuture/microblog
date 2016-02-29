@@ -97,7 +97,6 @@
   width: 50%;
   position: relative;
   left: 200px;
-
 }
 
 .posts {
@@ -161,4 +160,51 @@ button:hover{
   position: relative;
   top: 100px;
 
+}
+
+.profile {
+  position: absolute;
+  background: aliceblue;
+  color: navy;
+  font-size: 1em;
+  text-align: left;
+  height: 175px;
+  width: 125px;
+  margin-left: 125px;
+  margin-top: 50px;
+  padding-left: 15px;
+  padding-top: 0px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px black;
+}
+
+.posts-follows {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: white;
+  color: navy;
+  border: 10px solid;
+  border-radius: 10px;
+  width: 50%;
+  position: relative;
+  left: 315px;
+  top: 100px;
+  padding-bottom: 20px;
+}
+
+.new-posts {
+  width: 350px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px black;
+}
+
+.old-posts {
+  width: 350px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px black;
 }
