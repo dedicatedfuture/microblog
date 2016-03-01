@@ -30,19 +30,19 @@
     <% end %>
   </div>
 
-  <div class="posts-follows">
+  <div class="followers">
     <h2>Followers</h2>
     <% @current_user.get_followers.each do |f| %>
-      <div class="followers">
+      <div>
         <p><%= f %></p>
       </div>
     <% end %>
   </div>
 
-  <div class="posts-follows">
+  <div class="following">
     <h2>Following</h2>
     <% @current_user.get_following.each do |f| %>
-      <div class="following">
+      <div>
         <p><%= f %></p>
       </div>
     <% end %>
