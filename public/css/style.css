@@ -196,6 +196,36 @@ button:hover{
   padding-bottom: 20px;
 }
 
+.followers {
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  background: white;
+  color: navy;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px black;
+  width: 50%;
+  position: relative;
+  left: 315px;
+  top: 100px;
+  padding-bottom: 20px;
+}
+
+.following {
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  background: white;
+  color: navy;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px black;
+  width: 50%;
+  position: relative;
+  left: 315px;
+  top: 100px;
+  padding-bottom: 20px;
+}
+
 .new-posts {
   width: 350px;
   margin: 0 auto;
