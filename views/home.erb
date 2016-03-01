@@ -26,14 +26,16 @@
   <% end %>
 <% else %>
 <div class="container" id="firstdiv">
-  <h1>Welcome to Microblog</h1>
+  <h1>Philly Happenings Live</h1>
   <!-- display list of ten most recent blog feeds -->
 </div>
+<div class="posts-follows">
   <% @posts.first(10).each do |p| %>
-    <div class="posts">
+    <div class="old-posts">
       <h3><%= p.title %></h3>
       <p><%= p.body %></p>
       <p><%= p.user.username %></p>
     </div>
   <% end %>
+</div>
 <% end %>
