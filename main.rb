@@ -107,7 +107,16 @@ end
 get '/post' do
   erb :posts
 end
-
+get '/postdel' do
+  user_posts(params[:id])
+  @user_posts.where(params[:id]).destroy
+  redirect '/profile'
+end
+get '/postupdate' do
+  user_posts(params[:id])
+  @user_posts.where(params[:id]).update
+  redirect '/profile'
+end
 
 post '/microsubmit' do
   current_user
