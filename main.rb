@@ -107,15 +107,16 @@ end
 get '/post' do
   erb :posts
 end
+
 get '/postdel' do
-  user_posts(params[:id])
-  @user_posts.where(params[:id]).destroy
+  # puts "Params from profile page, on post delete:" params.inspect
+  # Post.where(params[:id]).destroy
   redirect '/profile'
 end
-get '/postupdate' do
-  user_posts(params[:id])
-  @user_posts.where(params[:id]).update
-  redirect '/profile'
+
+post '/postupdate' do
+  @updatepost = Post.where(id: params[:postid]).first
+  erb :crud_posts
 end
 
 post '/microsubmit' do

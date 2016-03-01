@@ -213,3 +213,14 @@ button:hover{
   border-radius: 10px;
   box-shadow: 0px 3px 10px black;
 }
+
+.update-posts {
+  text-align: center;
+  position: relative;
+  width: 350px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px black;
+}
