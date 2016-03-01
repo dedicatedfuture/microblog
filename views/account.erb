@@ -7,12 +7,6 @@
   <p>Email: <%= @current_user.email %></p>
   <p>Description: <%= @current_user.description %></p>
   <a href="/signup"><button type="button" class="update">Update</button></a>
-  <h2>Current people you are following</h2>
-
-  <% @current_user.get_followers.each do |follower| %>
-  <%= follower %>
-  <% end %>
-
 </div>
 <% else %>
 <div class="container">
