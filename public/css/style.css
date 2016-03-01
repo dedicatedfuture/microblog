@@ -1,27 +1,31 @@
-
 .sidebar-menu {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 10px;
   top: 0;
   left: 0;
-  background: tomato;
-  border-right: 3px red solid;
+  background: lightslategrey;
+  border-right: 2px black solid;
   width: 100px;
   height: 100%;
   position: fixed;
   overflow: auto;
 }
 
+.sidebar-menu > li {
+  margin-bottom: 5px;
+}
+
 .sidebar-menu > li a {
+  font-size: 1.5em;
   display: block;
   text-decoration: none;
   color: white;
 }
 
 .sidebar-menu > li a:hover {
-  background-color: darkred;
-  color: tomato;
+  background-color: white;
+  color: lightslategrey;
 }
 
 .home-header {
@@ -39,7 +43,6 @@
 }
 
 .topbar {
-
   text-align: center;
   width: 100%;
   color: navy;
@@ -51,14 +54,10 @@
   margin-right: -8px;
   padding-right: 15px;
   display: inline;
-
 }
-
-
 
 .sign-in li {
   display: inline;
-
   float: right;
 }
 
@@ -162,7 +161,8 @@ button:hover{
 #maincontainer{
   position: relative;
   top: 100px;
-
+  width: 90%;
+  float: right;
 }
 
 .profile {
@@ -187,7 +187,6 @@ button:hover{
   text-align: center;
   background: white;
   color: navy;
-  /*border: 10px solid;*/
   border-radius: 10px;
   box-shadow: inset 0 0 10px black;
   width: 50%;
@@ -215,12 +214,23 @@ button:hover{
 }
 
 .update-posts {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   position: relative;
+  top: 75px;
+  height: 300px;
   width: 350px;
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0px 3px 10px black;
+}
+
+.blogs-follows {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  margin: -10px;
 }
