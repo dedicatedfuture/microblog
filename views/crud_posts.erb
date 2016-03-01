@@ -1,8 +1,13 @@
 <div class="update-posts">
   <h3>What's Happening?</h3>
-  <form action="microsubmit" method="post" id="microsubmit">
+  <form action="/postupdate" method="post" id="microsubmit">
+    <p><input type="hidden" name="id" value="<%= @updatepost.id %>"></p>
     <p>Title: <input type="text" name="title" value="<%= @updatepost.title %>"></p>
     <p>Blog: <textarea rows="3" cols="30" name="microblog" form="microsubmit"><%= @updatepost.body %></textarea></p>
-    <p><input type="submit" value="Post"></p>
+    <p><input type="submit" value="Update"></p>
+  </form>
+  <form action="/postdel" method="post" id="microsubmit">
+    <p><input type="hidden" name="id" value="<%= @updatepost.id %>"></p>
+    <p><input type="submit" value="Delete"></p>
   </form>
 </div>

@@ -108,13 +108,17 @@ get '/post' do
   erb :posts
 end
 
-get '/postdel' do
-  # puts "Params from profile page, on post delete:" params.inspect
-  # Post.where(params[:id]).destroy
+post '/postdel' do
+  Post.where(id: params[:id]).first.destroy
   redirect '/profile'
 end
 
 post '/postupdate' do
+  Post.where(id: params[:id]).first.update(title: params[:title], body: params[:microblog], created: Time.now)
+  redirect '/profile'
+end
+
+post '/postcrud' do
   @updatepost = Post.where(id: params[:postid]).first
   erb :crud_posts
 end
