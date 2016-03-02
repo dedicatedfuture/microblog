@@ -18,11 +18,15 @@
       <h1 class="home-header">PHL</h1>
       <ul class="sign-in">
         <form method="POST" action="/sign-in">
+          <% if @current_user %>
           <li id="logout"><a href="/logout"><button type="button" class="bizutton">Log Out</button></a></li>
-          <li id="signup"><a href="/signup"><button type="button" class="bizutton">Sign Up</button></a></li>
+          <% else %>
+           <li id="signup"><a href="/signup"><button type="button" class="bizutton">Sign Up</button></a></li>
+
           <li><input type="submit" class="bizutton"></li>
           <li><input type="password" name="password" placeholder="Password"></li>
           <li> <input type="text" name="email" placeholder="Email"></li>
+           <% end %>
         </form>
       </ul>
       <%= flash[:notice] if flash[:notice] %>
