@@ -20,10 +20,12 @@
         <form method="POST" action="/sign-in">
           <% if @current_user %>
           <li id="logout"><a href="/logout"><button type="button" class="bizutton">Log Out</button></a></li>
+
           <% else %>
            <li id="signup"><a href="/signup"><button type="button" class="bizutton">Sign Up</button></a></li>
 
           <li><input type="submit" class="bizutton"></li>
+
           <li><input type="password" name="password" placeholder="Password"></li>
           <li> <input type="text" name="email" placeholder="Email"></li>
            <% end %>
@@ -36,6 +38,6 @@
     <%= yield %>
   </div>
   </body>
-  <script src="js/microblog.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="js/microblog.js"></script>
 </html>

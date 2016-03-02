@@ -107,15 +107,20 @@ end
 get '/post' do
   erb :posts
 end
-get '/postdel' do
-  user_posts(params[:id])
-  @user_posts.where(params[:id]).destroy
+
+post '/postdel' do
+  Post.where(id: params[:id]).first.destroy
   redirect '/profile'
 end
-get '/postupdate' do
-  user_posts(params[:id])
-  @user_posts.where(params[:id]).update
+
+post '/postupdate' do
+  Post.where(id: params[:id]).first.update(title: params[:title], body: params[:microblog], created: Time.now)
   redirect '/profile'
+end
+
+post '/postcrud' do
+  @updatepost = Post.where(id: params[:postid]).first
+  erb :crud_posts
 end
 
 post '/microsubmit' do
