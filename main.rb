@@ -13,7 +13,6 @@ require './models/followers'
 get '/' do
   post_all
   current_user
-
   erb :home
 end
 
@@ -23,7 +22,6 @@ get '/signup' do
 end
 
 get '/profile' do
-  user_posts
   current_user
   erb :profile
 end
@@ -84,6 +82,7 @@ end
 def current_user
   if session[:user_id]
     @current_user = User.find(session[:user_id])
+    user_posts(@current_user)
   end
 end
 
@@ -91,15 +90,16 @@ def post_all
   @posts = Post.all.reverse
 end
 
-def user_posts
-  current_user
-  user_id = @current_user.id
+def user_posts(x)
+  user_id = x.id
   @user_posts = Post.where(user_id: user_id).reverse
 end
 
 get '/del' do
   current_user
   @current_user.destroy
+  Follower.where(followed: @current_user.id).destroy_all
+  Follower.where(following: @current_user.id).destroy_all
   session[:user_id] = nil
   redirect '/'
 end
@@ -107,7 +107,16 @@ end
 get '/post' do
   erb :posts
 end
-
+get '/postdel' do
+  user_posts(params[:id])
+  @user_posts.where(params[:id]).destroy
+  redirect '/profile'
+end
+get '/postupdate' do
+  user_posts(params[:id])
+  @user_posts.where(params[:id]).update
+  redirect '/profile'
+end
 
 post '/microsubmit' do
   current_user
@@ -120,17 +129,20 @@ post '/microsubmit' do
 end
 
 post '/follow' do
-
-
   Follower.create(followed: params[:followed], following: params[:following])
   flash[:notice] = "You are now following this user."
   redirect '/'
 end
 
 post '/unfollow' do
-
   Follower.where(followed: params[:followed],  following:  params[:following]).destroy_all
   flash[:notice] = "You are no longer following this user."
   redirect '/'
+end
 
+post '/direct_to_other_user_profile' do
+  current_user
+  @other_user = User.where(id: params[:other_user_id]).first
+  @other_user_posts = Post.where(user_id: @other_user.id).reverse
+  erb :other_user_profile
 end
