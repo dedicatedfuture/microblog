@@ -14,8 +14,8 @@
       <h3>What's Happening?</h3>
       <form action="microsubmit" method="post" id="microsubmit">
         <p>Title: <input type="text" name="title"></p>
-        <p>Blog: <textarea rows="3" cols="30" name="microblog" form="microsubmit"></textarea></p>
-        <p><input type="submit" value="Post"></p>
+        <p>Blog: <textarea rows="3" cols="30" name="microblog" form="microsubmit" placeholder="(150 character limit)" onkeyup="countChar(this)"></textarea></p>
+        <p><div id="charNum"></div><input id="blog-submit" type="submit" value="Post"></p>
       </form>
     </div>
     <% @user_posts.first(10).each do |p| %>

@@ -48,7 +48,8 @@ post '/submitted' do
    @user_description = params[:description]
    @user_password = params[:password]
    @user = User.create(fname: @user_fname, lname: @user_lname, email: @user_email, username: @user_name, description: @user_description, password: @user_password, joined: Time.now )
-   redirect '/account'
+   session[:user_id] = @user.id
+   redirect '/profile'
 end
 
 post '/update' do

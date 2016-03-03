@@ -1,15 +1,4 @@
 $(document).ready(function(){
-  $("#logout").click(function(){
-    $("#logout").hide();
-    $("signin").show();
-    $("signup").show();
-  });
-
-  $("#signin").click(function(){
-    $("#signin").hide();
-    $("#signup").hide();
-    $("#logout").show();
-  });
 
   $(".blogbutton").click(function(){
     $(".posts-follows").css("display", "flex");
@@ -28,11 +17,25 @@ $(document).ready(function(){
     $(".posts-follows").css("display", "none");
     $(".followers").css("display", "none");
   });
+
 });
 
 function confirmDelete() {
-if (window.confirm("Are you sure you want to delete your profile? There is no retreival")){
-    window.open("http://localhost:9393/del")
-}
+  if (window.confirm("Are you sure you want to delete your profile? There is no retreival")){
+      window.open("http://localhost:9393/del")
+  };
+};
 
-}
+function countChar(x) {
+  var length = x.value.length;
+  if (length > 150){
+    $("#blog-submit").prop('type', 'button');
+    $("#blog-submit").css('color', 'grey');
+    $("#charNum").css('color', 'red');
+  } else {
+    $("#blog-submit").prop('type', 'submit');
+    $("#blog-submit").css('color', 'navy');
+    $("#charNum").css('color', 'green');
+  };
+  $("#charNum").text(150 - length);
+};
