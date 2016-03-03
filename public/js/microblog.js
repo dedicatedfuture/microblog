@@ -30,7 +30,7 @@ function countChar(x) {
   var length = x.value.length;
   if (length > 150){
     $("#blog-submit").prop('type', 'button');
-    $("#blog-submit").css('color', 'grey');
+    $("#blog-submit").css('color', 'red');
     $("#charNum").css('color', 'red');
   } else {
     $("#blog-submit").prop('type', 'submit');
