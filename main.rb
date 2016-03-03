@@ -96,11 +96,12 @@ def user_posts(x)
   @user_posts = Post.where(user_id: user_id).reverse
 end
 
-get '/del' do
+post '/del' do
   current_user
-  @current_user.destroy
   Follower.where(followed: @current_user.id).destroy_all
   Follower.where(following: @current_user.id).destroy_all
+  Post.where(user_id: @current_user.id).destroy_all
+  @current_user.destroy
   session[:user_id] = nil
   redirect '/'
 end

@@ -8,7 +8,15 @@
     <p>Password: <input type="password" name="password" value="<%= @current_user.password %>"></p>
     <p>Description: <textarea rows="10" cols="50" name="description" form="signup"><%= @current_user.description %></textarea></p>
     <p><input type="submit" value="Update"></p>
-    <p><button type="button" class="delete" onclick="confirmDelete()" id="del">Delete</button></p>
+  </form>
+  <form action="del" method="post" id="signup">
+    <input type="hidden" name="fname" value="<%= @current_user.fname %>">
+    <input type="hidden" name="lname" value="<%= @current_user.lname %>">
+    <input type="hidden" name="email" value="<%= @current_user.email %>">
+    <input type="hidden" name="uname" value="<%= @current_user.username %>">
+    <input type="hidden" name="password" value="<%= @current_user.password %>">
+    <input type="hidden" rows="10" cols="50" name="description" form="signup"><%= @current_user.description %></input>
+    <input type="submit" class="delete" onclick="confirmDelete()" id="del" value="Delete"></input>
   </form>
 </div>
 <% else %>
